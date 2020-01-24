@@ -321,20 +321,20 @@ const Cards = (props: any) => {
                     <h2>Бери для всего, что ты хочешь</h2>
                     <Grid container direction="row" justify="space-between">
                         <Grid item>
-                            <h3>15 грамм</h3>
-                            <h4>Нержавеющая сталь</h4>
+                            <h3>до 3 млн. ₸</h3>
+                            <h4>Кредитный лимит</h4>
                         </Grid>
                         <Grid item>
-                            <h3>2%</h3>
-                            <h4>Кешбэк на все операции</h4>
+                            <h3>до 12 месяцев</h3>
+                            <h4>Рассрочка без процентов</h4>
                         </Grid>
                         <Grid item>
-                            <h3>1 000+ бизнес-залов</h3>
-                            <h4>Бесплатное посещение по всему миру</h4>
+                            <h3>до 30%</h3>
+                            <h4>Кешбэк</h4>
                         </Grid>
                     </Grid>
-                    <a href="https://www.bcc.kz/ironcard#order" onClick={() => eventGAOrderCard(1)} className={classes.button} target="_blank">Заказать карту</a>
-                    <a href="https://www.bcc.kz/ironcard" onClick={() => eventGAOrderCard(1, true)} className={`${classes.button} ${classes.buttonSecond} ${classes.btnGreen}`} target="_blank">Подробнее о карте</a>
+                    <a href="https://www.bcc.kz/kartakarta#order" onClick={() => eventGAOrderCard(1)} className={classes.button} target="_blank">Заказать карту</a>
+                    <a href="https://www.bcc.kz/kartakarta/" onClick={() => eventGAOrderCard(1, true)} className={`${classes.button} ${classes.buttonSecond} ${classes.btnGreen}`} target="_blank">Подробнее о карте</a>
                 </Grid>
             </Grid>
         </Grid>
@@ -348,16 +348,16 @@ const Cards = (props: any) => {
                     <h2>Идеальная карта, как для людей, так и бизнеса</h2>
                     <Grid container direction="row" justify="space-between">
                         <Grid item>
-                            <h3>15 грамм</h3>
-                            <h4>Нержавеющая сталь</h4>
+                            <h3>Чат, звонки, почта</h3>
+                            <h4>Круглосуточная поддержка</h4>
                         </Grid>
                         <Grid item>
-                            <h3>2%</h3>
+                            <h3>1%</h3>
                             <h4>Кешбэк на все операции</h4>
                         </Grid>
                         <Grid item>
-                            <h3>1 000+ бизнес-залов</h3>
-                            <h4>Бесплатное посещение по всему миру</h4>
+                            <h3>Переводы, SMS-сервис и пр.</h3>
+                            <h4>Бесплатные условия</h4>
                         </Grid>
                     </Grid>
                     <a href="https://www.bcc.kz/product/salary-project/" onClick={() => eventGAOrderCard(2)} className={classes.button} target="_blank">Заказать карту</a>
