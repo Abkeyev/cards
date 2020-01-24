@@ -157,6 +157,7 @@ const useStyles = makeStyles((theme: Theme) =>
         padding: '15px 30px',
         cursor: 'pointer',
         fontSize: 14,
+        backgroundColor: '#ffffff',
         '&:hover': {
             backgroundColor: '#27AE60',
             color: 'white'
