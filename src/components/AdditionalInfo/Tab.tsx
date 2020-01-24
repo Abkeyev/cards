@@ -55,7 +55,10 @@ interface StyledTabsProps {
 
 const StyledTabs = withStyles({
     root: {
-      borderBottom: '1px solid #C4C4C4'
+      borderBottom: '1px solid #C4C4C4',
+      '& button': {
+        maxWidth: 'max-content'
+      }
     },
     indicator: {
       display: 'flex',

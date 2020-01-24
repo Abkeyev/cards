@@ -12,6 +12,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Tab from "./Tab";
 import { paddingDownSm } from "../helper/DefaultStyle";
 import ReactGA from "react-ga";
+import ExpansionPanel from "./ExpansionPanel";
 
 const useStylesTarifs = makeStyles((theme: Theme) =>
   createStyles({
@@ -52,11 +53,43 @@ const useStylesTarifs = makeStyles((theme: Theme) =>
       TableW: {
         widthh: "70%"
       }
+    },
+    th: {
+      width: '30%'
     }
   })
 );
 
-const Tarifs = () => {
+const Documents = () => {
+  const classes = useStylesTarifs({});
+
+  const rows = [
+    { code: "Для резидентов РК", value: "Хватает удостоверения личности или паспорта" },
+    { code: "Для нерезидентов РК", value: (
+        <Typography className={classes.td}>
+          · Документ, удостоверяющий личность (паспорт иностранного гражданина, вид на жительство иностранца в Республике Казахстан, удостоверение лица без гражданства)<br/><br/> · Документ, содержащий информацию об ИИН<br/><br/> · Документ, удостоверяющий регистрацию в уполномоченных органах РК  на право въезда, выезда и пребывания физического лица–нерезидента на территории РК, если иное не предусмотрено международными договорами, ратифицированными РК.
+        </Typography>
+      )
+    }
+  ];
+
+  return (
+    <Box className={classes.TableW}>
+      <Table>
+        <TableBody>
+          {rows.map((m, i) => (
+            <TableRow key={i}>
+              <TableCell className={classes.th}>{m.code}</TableCell>
+              <TableCell className={classes.td}>{m.value}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </Box>
+  );
+};
+
+const Cashback = () => {
   const classes = useStylesTarifs({});
 
   const rows = [
@@ -111,7 +144,7 @@ const Tarifs = () => {
   );
 };
 
-const Conditions = () => {
+const Faq = () => {
   const classes = useStylesTarifs({});
 
   const rows = [
@@ -165,6 +198,11 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: 40,
         color: "#141414"
       }
+    },
+    root: {
+      maxWidth: 1280,
+      margin: '0 auto',
+      position: 'relative'
     }
   })
 );
@@ -185,13 +223,13 @@ const AdditionalInfo = () => {
   return (
     <Grid container className={classes.root}>
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-        <Typography className={classes.title}>Дополнительно</Typography>
+        <Typography className={classes.title}>Полезно знать</Typography>
       </Grid>
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
         <Tab
           onHandleChanged={(i: number) => swipeTab(i)}
-          menuTitle={["Тарифы"]}
-          pans={[<Tarifs />]}
+          menuTitle={["Документы на открытие карты", "Часто задаваемые вопросы"]}
+          pans={[<Documents />, <ExpansionPanel/>]}
         />
       </Grid>
     </Grid>

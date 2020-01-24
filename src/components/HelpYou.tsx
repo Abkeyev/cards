@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme: Theme) =>
         backgroundColor: "#FFFFFF",
         borderRadius: 8,
         padding: 20,
+        height: 'auto',
+        minHeight: 80,
+        alignContent: 'flex-start',
         border: "1px solid #E8E8E8",
         marginBottom: 10,
         "&:hover": {
@@ -43,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       freeCall: {
         color: "#ffffff",
-        background: "#27AE60",
+        background: "#141414",
         borderRadius: 8,
         width: 32,
         height: 32,
@@ -59,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       phone: {
         color: "#ffffff",
-        background: "#27AE60",
+        background: "#141414",
         borderRadius: 8,
         width: 32,
         height: 32,
@@ -88,9 +91,11 @@ const useStyles = makeStyles((theme: Theme) =>
         backgroundColor: "#FFFFFF",
         borderRadius: 8,
         padding: 20,
+        height: 'auto',
+        minHeight: 80,
         border: "1px solid #E8E8E8",
         display: "grid",
-        alignContent: "center",
+        alignContent: 'flex-start',
         "&:hover": {
           cursor: "pointer"
         }
@@ -109,7 +114,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       freeCall: {
         color: "#ffffff",
-        background: "#27AE60",
+        background: "#141414",
         borderRadius: 8,
         width: 32,
         height: 32,
@@ -127,7 +132,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       phone: {
         color: "#ffffff",
-        background: "#27AE60",
+        background: "#141414",
         borderRadius: 8,
         width: 32,
         height: 32,
@@ -159,6 +164,11 @@ const useStyles = makeStyles((theme: Theme) =>
         display: "flex",
         alignItems: "center"
       }
+    },
+    root: {
+      maxWidth: 1280,
+      margin: '0 auto',
+      position: 'relative'
     },
     gridMargin: {
       "& > a": {
