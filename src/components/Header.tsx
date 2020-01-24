@@ -6,7 +6,9 @@ import ReactGA from "react-ga";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
-      padding: '45px 52px 10px'
+      padding: '45px 52px 10px',
+      maxWidth: 1280,
+      margin: '0 auto'
     },
     logo: {
       marginBottom: 30

@@ -6,7 +6,9 @@ import ReactGA from "react-ga";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
       main: {
-          padding: '32px 52px'
+          padding: '32px 52px',
+          maxWidth: 1280,
+          margin: '0 auto'
       },
       title: {
           fontSize: 48,
