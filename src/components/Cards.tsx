@@ -167,12 +167,18 @@ const useStyles = makeStyles((theme: Theme) =>
         }
       },
       cardsSecond: {
-          backgroundColor: 'white',
+          backgroundColor: 'transparent',
           borderRadius: 8,
-          marginBottom: 25,
-          padding: '32px 64px',
           width: '31%',
-          '& > div': {
+          '&:hover': {
+              backgroundColor: '#FAFAFA'
+          },
+          '& > a': {
+              padding: '32px 64px',
+              display: 'block',
+              textDecoration: 'none'
+          },
+          '& > a > div': {
               '& > img': {
                   display: 'block',
                   width: '100%',
@@ -187,9 +193,6 @@ const useStyles = makeStyles((theme: Theme) =>
                   color: '#5B5B5B',
                   fontWeight: 'normal'
               }
-          },
-          '&:hover': {
-              backgroundColor: '#FAFAFA'
           },
           [theme.breakpoints.down('sm')]: {
               padding: '16px 32px'
@@ -220,15 +223,20 @@ const useStyles = makeStyles((theme: Theme) =>
     block: {
         opacity: 0,
         maxHeight: 0,
-        transition: 'opacity .2s ease-out, max-height .3s ease-out .1s',
-        zIndex: 1,
-        position: 'relative'
+        borderRadius: 8,
+        textDecoration: 'none',
+        transition: 'opacity .2s ease-out, max-height .3s ease-out .1s,box-shadow .19s ease-out 0s,transform .19s ease-out 0s',
+        zIndex: -1,
+        transform: 'scale(.9825)',
+        position: 'relative',
+        marginBottom: 25
     },
     smoothShow: {
         maxHeight: '1000px',
         opacity: 1,
         zIndex: 1,
-        transition: 'opacity 1s ease-out'
+        transition: 'opacity 1s ease-out,box-shadow .19s ease-out 0s,transform .19s ease-out 0s',
+        marginBottom: 25
     }
   })
 );
@@ -238,43 +246,62 @@ const Cards = (props: any) => {
   const [show, setShow] = React.useState(false)
 
   const showAll = () => {
-      setShow(!show)
+    ReactGA.event({
+        category: "BCC_Show_AllCards",
+        action: "Show_AllCards"
+    });
+    setShow(!show)
   }
 
   const eventGAOrderCard = (num: number, isDetail?: boolean) => {
       if(num === 0) {
           ReactGA.event({
-              category: "BccCards",
+              category: "IronCard",
               action: "BccCards_IronOrder"
           });
           if(isDetail) {
             ReactGA.event({
-                category: "BccCards",
+                category: "IronCard",
                 action: "BccCards_IronDetail"
             });
           }
       } else if(num === 1) {
         ReactGA.event({
-            category: "BccCards",
+            category: "cardcard",
             action: "BccCards_CardOrder"
         });
         if(isDetail) {
           ReactGA.event({
-              category: "BccCards",
+              category: "cardcard",
               action: "BccCards_CardDetail"
           });
         }
       } else if(num === 2) {
         ReactGA.event({
-            category: "BccCards",
+            category: "Ucard",
             action: "BccCards_UCardOrder"
         });
         if(isDetail) {
           ReactGA.event({
-              category: "BccCards",
+              category: "Ucard",
               action: "BccCards_UCardDetail"
           });
         }
+      } else if(num === 3) {
+        ReactGA.event({
+            category: "BCC_Cards_VisaInfinite",
+            action: "Cards_VisaInfinite"
+        });
+      } else if(num === 4) {
+        ReactGA.event({
+            category: "BCC_Cards_VisaInstantSocial",
+            action: "Cards_VisaInstantSocial"
+        });
+      } else if(num === 5) {
+        ReactGA.event({
+            category: "BCC_Cards_MSBlackEdition",
+            action: "Cards_MSBlackEdition"
+        });
       }
   };
 
@@ -307,7 +334,7 @@ const Cards = (props: any) => {
                             <h4>Бесплатное посещение по всему миру</h4>
                         </Grid>
                     </Grid>
-                    <a href="https://www.bcc.kz/ironcard#order" onClick={() => eventGAOrderCard(0)} className={classes.button} target="_blank">Заказать карту</a>
+                    <a href="https://www.bcc.kz/ironcard?utm_source=bcc&utm_medium=button_click&utm_campaign=cards#order" onClick={() => eventGAOrderCard(0)} className={classes.button} target="_blank">Заказать карту</a>
                     <a href="https://www.bcc.kz/ironcard" onClick={() => eventGAOrderCard(0, true)} className={`${classes.button} ${classes.buttonSecond} ${classes.iron}`} target="_blank">Подробнее о карте</a>
                 </Grid>
             </Grid>
@@ -334,7 +361,7 @@ const Cards = (props: any) => {
                             <h4>Кешбэк</h4>
                         </Grid>
                     </Grid>
-                    <a href="https://www.bcc.kz/kartakarta#order" onClick={() => eventGAOrderCard(1)} className={classes.button} target="_blank">Заказать карту</a>
+                    <a href="https://www.bcc.kz/kartakarta?utm_source=bcc&utm_medium=button_click&utm_campaign=cards#order" onClick={() => eventGAOrderCard(1)} className={classes.button} target="_blank">Заказать карту</a>
                     <a href="https://www.bcc.kz/kartakarta/" onClick={() => eventGAOrderCard(1, true)} className={`${classes.button} ${classes.buttonSecond} ${classes.btnGreen}`} target="_blank">Подробнее о карте</a>
                 </Grid>
             </Grid>
@@ -361,41 +388,47 @@ const Cards = (props: any) => {
                             <h4>Бесплатные условия</h4>
                         </Grid>
                     </Grid>
-                    <a href="https://www.bcc.kz/product/salary-project/" onClick={() => eventGAOrderCard(2)} className={classes.button} target="_blank">Заказать карту</a>
+                    <a href="https://www.bcc.kz/product/salary-project/?utm_source=bcc&utm_medium=button_click&utm_campaign=cards" onClick={() => eventGAOrderCard(2)} className={classes.button} target="_blank">Заказать карту</a>
                     <a href="https://www.bcc.kz/product/salary-project/" onClick={() => eventGAOrderCard(2, true)} className={`${classes.button} ${classes.buttonSecond} ${classes.btnGreen}`} target="_blank">Подробнее о карте</a>
                 </Grid>
             </Grid>
         </Grid>
         <Grid item container justify="space-between" className={`${classes.block} ${show ? classes.smoothShow : ''}`}>
             <Grid item className={classes.cardsSecond} xl={true} lg={true} md={true} sm={true} xs={12}>
-                <div>
-                    <img src="card1.svg" alt=""/>
-                    <Grid container justify="space-between">
-                        <Grid item xl={6} lg={6} md={12} sm={12} xs={12}><h1 className={classes.h1}><a href="https://www.bcc.kz/product/standard-card/" target="_blank">Visa Infinite</a></h1></Grid>
-                        <Grid item xl={6} lg={6} md={12} sm={12} xs={12}><span className={classes.span}>Премиум</span></Grid>
-                    </Grid>
-                    <h2>Премиальная карта</h2>
-                </div>
+                <a href="https://www.bcc.kz/product/standard-card/" onClick={() => eventGAOrderCard(3)} target="_blank">
+                    <div>
+                        <img src="card1.svg" alt=""/>
+                        <Grid container justify="space-between">
+                            <Grid item xl={6} lg={6} md={12} sm={12} xs={12}><h1 className={classes.h1}>Visa Infinite</h1></Grid>
+                            <Grid item xl={6} lg={6} md={12} sm={12} xs={12}><span className={classes.span}>Премиум</span></Grid>
+                        </Grid>
+                        <h2>Премиальная карта</h2>
+                    </div>
+                </a>
             </Grid>
             <Grid item className={classes.cardsSecond} xl={true} lg={true} md={true} sm={true} xs={12}>
-                <div>
-                    <img src="card2.svg" alt=""/>
-                    <Grid container justify="space-between">
-                        <Grid item><h1 className={classes.h1}><a href="https://www.bcc.kz/product/standard-card/" target="_blank">Visa Instant Social Card</a></h1></Grid>
-                        <Grid item></Grid>
-                    </Grid>
-                    <h2>Для пенсии и пособий</h2>
-                </div>
+                <a href="https://www.bcc.kz/product/standard-card/" onClick={() => eventGAOrderCard(4)} target="_blank">
+                    <div>
+                        <img src="card2.svg" alt=""/>
+                        <Grid container justify="space-between">
+                            <Grid item><h1 className={classes.h1}>Visa Instant Social Card</h1></Grid>
+                            <Grid item></Grid>
+                        </Grid>
+                        <h2>Для пенсии и пособий</h2>
+                    </div>
+                </a>
             </Grid>
             <Grid item className={classes.cardsSecond} xl={true} lg={true} md={true} sm={true} xs={12}>
-                <div>
-                    <img src="card3.svg" alt=""/>
-                    <Grid container justify="space-between">
-                        <Grid item xl={6} lg={6} md={12} sm={12} xs={12}><h1 className={classes.h1}><a href="https://www.bcc.kz/product/standard-card/" target="_blank">Mastercard Black Edition</a></h1></Grid>
-                        <Grid item xl={6} lg={6} md={12} sm={12} xs={12}><span className={classes.span}>Премиум</span></Grid>
-                    </Grid>
-                    <h2>Экслюзивная карта</h2>
-                </div>
+                <a href="https://www.bcc.kz/product/standard-card/" onClick={() => eventGAOrderCard(5)} target="_blank">
+                    <div>
+                        <img src="card3.svg" alt=""/>
+                        <Grid container justify="space-between">
+                            <Grid item xl={6} lg={6} md={12} sm={12} xs={12}><h1 className={classes.h1}>Mastercard Black Edition</h1></Grid>
+                            <Grid item xl={6} lg={6} md={12} sm={12} xs={12}><span className={classes.span}>Премиум</span></Grid>
+                        </Grid>
+                        <h2>Экслюзивная карта</h2>
+                    </div>
+                </a>
             </Grid>
         </Grid>
         <Grid item xl={12} lg={12} md={12} style={{ marginBottom: 64, zIndex: 2 }}>
