@@ -334,8 +334,8 @@ const Cards = (props: any) => {
                             <h4>Бесплатное посещение по всему миру</h4>
                         </Grid>
                     </Grid>
-                    <a href="https://www.bcc.kz/ironcard?utm_source=bcc&utm_medium=button_click&utm_campaign=cards#order" onClick={() => eventGAOrderCard(0)} className={classes.button} target="_blank">Заказать карту</a>
-                    <a href="https://www.bcc.kz/ironcard" onClick={() => eventGAOrderCard(0, true)} className={`${classes.button} ${classes.buttonSecond} ${classes.iron}`} target="_blank">Подробнее о карте</a>
+                    <a href="https://www.bcc.kz/ironcard?utm_source=bcc&utm_medium=button_click&utm_campaign=cards#order" id="ironCardOrder" onClick={() => eventGAOrderCard(0)} className={classes.button} target="_blank">Заказать карту</a>
+                    <a href="https://www.bcc.kz/ironcard?utm_source=bcc&utm_medium=button_click&utm_campaign=cards" id="ironCardDetail" onClick={() => eventGAOrderCard(0, true)} className={`${classes.button} ${classes.buttonSecond} ${classes.iron}`} target="_blank">Подробнее о карте</a>
                 </Grid>
             </Grid>
         </Grid>
@@ -361,8 +361,8 @@ const Cards = (props: any) => {
                             <h4>Кешбэк</h4>
                         </Grid>
                     </Grid>
-                    <a href="https://www.bcc.kz/kartakarta?utm_source=bcc&utm_medium=button_click&utm_campaign=cards#order" onClick={() => eventGAOrderCard(1)} className={classes.button} target="_blank">Заказать карту</a>
-                    <a href="https://www.bcc.kz/kartakarta/" onClick={() => eventGAOrderCard(1, true)} className={`${classes.button} ${classes.buttonSecond} ${classes.btnGreen}`} target="_blank">Подробнее о карте</a>
+                    <a href="https://www.bcc.kz/kartakarta?utm_source=bcc&utm_medium=button_click&utm_campaign=cards#order" id="kartakartaOrder" onClick={() => eventGAOrderCard(1)} className={classes.button} target="_blank">Заказать карту</a>
+                    <a href="https://www.bcc.kz/kartakarta?utm_source=bcc&utm_medium=button_click&utm_campaign=cards" id="kartakartaDetail" onClick={() => eventGAOrderCard(1, true)} className={`${classes.button} ${classes.buttonSecond} ${classes.btnGreen}`} target="_blank">Подробнее о карте</a>
                 </Grid>
             </Grid>
         </Grid>
@@ -388,14 +388,14 @@ const Cards = (props: any) => {
                             <h4>Бесплатные условия</h4>
                         </Grid>
                     </Grid>
-                    <a href="https://www.bcc.kz/product/salary-project/?utm_source=bcc&utm_medium=button_click&utm_campaign=cards" onClick={() => eventGAOrderCard(2)} className={classes.button} target="_blank">Заказать карту</a>
-                    <a href="https://www.bcc.kz/product/salary-project/" onClick={() => eventGAOrderCard(2, true)} className={`${classes.button} ${classes.buttonSecond} ${classes.btnGreen}`} target="_blank">Подробнее о карте</a>
+                    <a href="https://www.bcc.kz/product/salary-project/?utm_source=bcc&utm_medium=button_click&utm_campaign=cards" id="salaryOrder" onClick={() => eventGAOrderCard(2)} className={classes.button} target="_blank">Заказать карту</a>
+                    <a href="https://www.bcc.kz/product/salary-project/?utm_source=bcc&utm_medium=button_click&utm_campaign=cards" id="salaryDetail" onClick={() => eventGAOrderCard(2, true)} className={`${classes.button} ${classes.buttonSecond} ${classes.btnGreen}`} target="_blank">Подробнее о карте</a>
                 </Grid>
             </Grid>
         </Grid>
         <Grid item container justify="space-between" className={`${classes.block} ${show ? classes.smoothShow : ''}`}>
             <Grid item className={classes.cardsSecond} xl={true} lg={true} md={true} sm={true} xs={12}>
-                <a href="https://www.bcc.kz/product/standard-card/" onClick={() => eventGAOrderCard(3)} target="_blank">
+                <a href="https://www.bcc.kz/product/standard-card/" id="standartCard1" onClick={() => eventGAOrderCard(3)} target="_blank">
                     <div>
                         <img src="card1.svg" alt=""/>
                         <Grid container justify="space-between">
@@ -407,7 +407,7 @@ const Cards = (props: any) => {
                 </a>
             </Grid>
             <Grid item className={classes.cardsSecond} xl={true} lg={true} md={true} sm={true} xs={12}>
-                <a href="https://www.bcc.kz/product/standard-card/" onClick={() => eventGAOrderCard(4)} target="_blank">
+                <a href="https://www.bcc.kz/product/standard-card/" id="standartCard2" onClick={() => eventGAOrderCard(4)} target="_blank">
                     <div>
                         <img src="card2.svg" alt=""/>
                         <Grid container justify="space-between">
@@ -419,7 +419,7 @@ const Cards = (props: any) => {
                 </a>
             </Grid>
             <Grid item className={classes.cardsSecond} xl={true} lg={true} md={true} sm={true} xs={12}>
-                <a href="https://www.bcc.kz/product/standard-card/" onClick={() => eventGAOrderCard(5)} target="_blank">
+                <a href="https://www.bcc.kz/product/standard-card/" id="standartCard3" onClick={() => eventGAOrderCard(5)} target="_blank">
                     <div>
                         <img src="card3.svg" alt=""/>
                         <Grid container justify="space-between">
