@@ -56,6 +56,10 @@ const useStylesTarifs = makeStyles((theme: Theme) =>
     },
     th: {
       width: '30%'
+    },
+    a: {
+      textDecoration: 'none',
+      color: '#000000'
     }
   })
 );
@@ -92,82 +96,50 @@ const Documents = () => {
 const Cashback = () => {
   const classes = useStylesTarifs({});
 
-  const rows = [
-    { code: "Тип карты", value: "Visa Infinite #IRonCard" },
-    { code: "Стоимость выпуска", value: "30 000 скидка 50% в течение января" },
-    {
-      code: "Стоимость обслуживания, мес",
-      value:
-        "Бесплатно в случае: <br/>1. Безналичная оплата в месяц от 1 000 000 ₸ <br/>2. Депозит/Остаток на карте от 15 000 000 ₸ <br/><span>В прочих случаях - 10 000 KZT в месяц</span>"
-    },
-    {
-      code: "Cashback",
-      value:
-        "2% базовый<br/>+1% при наличии вклада от 1 000 000 до 6 000 000 ₸<br/>+2% при наличии вклада от 6 000 000 ₸"
-    },
-    { code: "Cashback лимит в мес", value: "100 000 ₸" },
-    {
-      code:
-        "Получение наличных<br/>(сторонние банкоматы РК)<br/><br/>Получение наличных<br/>(сторонние банкоматы мир)",
-      value:
-        "от 5 000 ₸ - 0 ₸<br/>до 5 000 ₸ - 100 ₸<br/>лимит в мес 3 000 000 ₸, свыше - 1% мин 250 ₸"
-    },
-    {
-      code: "Переводы на карту любого банка РК",
-      value: "Бесплатно"
-    },
-    {
-      code: "Переводы на карту в зарубежный банк",
-      value: "1 000 000 - бесплатно<br/>свыше 1%, мин 250 ₸"
-    },
-    { code: "Смс-обслуживание", value: "Бесплатно" },
-    { code: "Перевыпуск по утере", value: "80 000 ₸" }
-  ];
-
   return (
-    <Box className={classes.TableW}>
+    <Box width={0.7}>
       <Table>
         <TableBody>
-          {rows.map((m, i) => (
-            <TableRow key={i}>
-              <TableCell className={classes.th}>
-                <div dangerouslySetInnerHTML={{ __html: m.code }} />
-              </TableCell>
-              <TableCell className={classes.td}>
-                <div dangerouslySetInnerHTML={{ __html: m.value }} />
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </Box>
-  );
-};
-
-const Faq = () => {
-  const classes = useStylesTarifs({});
-
-  const rows = [
-    { code: "Кредитный лимит", value: "до 3 млн тенге" },
-    { code: "Выпуск", value: "Бесплатно" },
-    { code: "Годовое обслуживание", value: "Бесплатно" },
-    { code: "Беспроцентный период", value: "55 дней" },
-    { code: "Процентная ставка", value: "25%" },
-    { code: "Комиссия за снятие наличных", value: "25%" },
-    { code: "Процентная ставка", value: "4%" },
-    { code: "Комиссия за перевод в другие Банки", value: "4%" }
-  ];
-
-  return (
-    <Box className={classes.TableW}>
-      <Table>
-        <TableBody>
-          {rows.map((m, i) => (
-            <TableRow key={i}>
-              <TableCell className={classes.th}>{m.code}</TableCell>
-              <TableCell className={classes.td}>{m.value}</TableCell>
-            </TableRow>
-          ))}
+          <TableRow>
+            <TableCell colSpan={2} className={classes.td}>
+              <Typography>
+                <a href="prot1.pdf" target="_blank" className={classes.a}>
+                  <img src="pdf.svg" alt="pdf" />
+                  &nbsp; Протокол_56_1_от_311219_об утв тарифов и кешбэк.pdf
+                </a>
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell colSpan={2} className={classes.td}>
+              <Typography>
+                <a href="prot2.pdf" target="_blank" className={classes.a}>
+                  <img src="pdf.svg" alt="pdf" />
+                  &nbsp; Протокол_56_1_от_311219_об утв тарифов и кешбэк_2.pdf
+                </a>
+              </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell colSpan={2} className={classes.td}>
+                <Typography>
+                  <a href="protcash.pdf" target="_blank" className={classes.a}>
+                  <img src="pdf.svg" alt="pdf" />
+                  &nbsp; Приложение_1_к_Протокол_56_1_от_311219_об утв тарифов и кешбэк_.pdf
+                  </a>
+                </Typography>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell colSpan={2} className={classes.td}>
+                <Typography>
+                  <a href="pril2.doc" target="_blank" className={classes.a}>
+                  <img src="pdf.svg" alt="pdf" />
+                  &nbsp; Прилож_2_Кешбэк_дебетные карты.doc
+                  </a>
+                </Typography>
+            </TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </Box>
@@ -228,8 +200,8 @@ const AdditionalInfo = () => {
       <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
         <Tab
           onHandleChanged={(i: number) => swipeTab(i)}
-          menuTitle={["Документы на открытие карты", "Часто задаваемые вопросы"]}
-          pans={[<Documents />, <ExpansionPanel/>]}
+          menuTitle={["Документы на открытие карты", "Часто задаваемые вопросы", "Условия по кешбэку"]}
+          pans={[<Documents />, <ExpansionPanel/>, <Cashback/>]}
         />
       </Grid>
     </Grid>
