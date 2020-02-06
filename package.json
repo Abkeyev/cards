@@ -1,6 +1,5 @@
 {
-  "homepage": "http://sunnatilla.github.io/ironcard",
-  "name": "ironcard",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
