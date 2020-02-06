@@ -246,7 +246,7 @@ const Cards = (props: any) => {
   const [show, setShow] = React.useState(false)
 
   const showAll = () => {
-    ReactGA.event({
+    !show && ReactGA.event({
         category: "BCC_Show_AllCards",
         action: "Show_AllCards"
     });
