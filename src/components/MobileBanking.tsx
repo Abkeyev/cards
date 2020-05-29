@@ -114,7 +114,7 @@ const MobileBanking = () => {
       <Grid item container className={classes.innerRoot} spacing={4}>
         <Grid item xl={7} lg={7} md={7} sm={12} xs={12}>
           <Typography className={classes.title}>
-            Мобильное приложение Starbanking
+            Мобильное приложение BCC.KZ
           </Typography>
           <Typography className={classes.description}>
             Оплачивайте услуги, управляйте рассрочкой и кешбэком, пополняйте карту

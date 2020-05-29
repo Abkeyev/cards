@@ -341,7 +341,33 @@ const Cards = (props: any) => {
                 </Grid>
             </Grid>
         </Grid>
-        <Grid item container justify="space-between" className={`${classes.block} ${show ? classes.smoothShow : ''}`}>
+        <Grid item xl={12} lg={12} md={12}>
+            <Grid container direction="row" justify="space-between" className={classes.card} style={{marginBottom: 24}}>
+                <Grid item xl={4} lg={4} md={4} sm={4} xs={12}>
+                    <img src="socialCard.svg" alt=""/>
+                </Grid>
+                <Grid item xl={8} lg={8} md={8} sm={8} xs={12}>
+                    <h1>#Социальная карта<span className="chip">дебетовая карта</span></h1>
+                    <h2> Карта для пособий и социальных выплат</h2>
+                    <Grid container direction="row" justify="space-between">
+                        <Grid item>
+                            <h3>Бесконтактная оплата</h3>
+                            <h4>payWave</h4>
+                        </Grid>
+                        <Grid item>
+                            <h3>Выпуск, обслуживание</h3>
+                            <h4>Бесплатные условия</h4>
+                        </Grid>
+                        <Grid item>
+                            <h3>Переводы, снятие наличных</h3>
+                            <h4>Бесплатные условия</h4>
+                        </Grid>
+                    </Grid>
+                    <a href="https://www.bcc.kz/socialcard/" id="socialcard" className={classes.button} target="_blank">Заказать карту</a>
+                </Grid>
+            </Grid>
+        </Grid>
+        {/* <Grid item container justify="space-between" className={`${classes.block} ${show ? classes.smoothShow : ''}`}>
             <Grid item className={classes.cardsSecond} xl={true} lg={true} md={true} sm={true} xs={12}>
                 <a href="https://www.bcc.kz/product/standard-card/" id="standartCard1" target="_blank">
                     <div>
@@ -378,10 +404,10 @@ const Cards = (props: any) => {
                     </div>
                 </a>
             </Grid>
-        </Grid>
-        <Grid item xl={12} lg={12} md={12} style={{ marginBottom: 64, zIndex: 2 }}>
+        </Grid> */}
+        {/* <Grid item xl={12} lg={12} md={12} style={{ marginBottom: 64, zIndex: 2 }}>
             <button className={classes.showAllBtn} onClick={() => showAll()}>{show ? 'Скрыть карты' : 'Показать все карты'} (3)</button>
-        </Grid>
+        </Grid> */}
     </Grid>
   );
 };

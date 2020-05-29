@@ -70,7 +70,7 @@ const ControlledExpansionPanels = () => {
       question: "Как заказать карту?",
       answer: (
         <Typography>
-          Карту можно заказать <a className={classes.link} target="_blank" href="http://m.bcc.kz/">в StarBanking</a>, на сайте каждого продукта или в удобном для вас <a href="https://www.bcc.kz/branches-and-atms/" target="_blank" className={classes.link}>офисе Банка</a>
+          Карту можно заказать <a className={classes.link} target="_blank" href="http://m.bcc.kz/">в BCC.KZ</a>, на сайте каждого продукта или в удобном для вас <a href="https://www.bcc.kz/branches-and-atms/" target="_blank" className={classes.link}>офисе Банка</a>
         </Typography>
       )
     },
@@ -78,7 +78,7 @@ const ControlledExpansionPanels = () => {
       question: "Что делать, если я потерял карту?",
       answer: (
         <Typography>
-          1. Заблокировать карту <a className={classes.link} target="_blank" href="http://m.bcc.kz/">в StarBanking</a><br/>
+          1. Заблокировать карту <a className={classes.link} target="_blank" href="http://m.bcc.kz/">в BCC.KZ</a><br/>
           2. Позвонить в колл-центр Банка по номеру <a href="tel:505" target="_blank" className={classes.link}>505</a> или обратиться <a href="https://www.bcc.kz/branches-and-atms/" target="_blank" className={classes.link}>в ближайшее отделение Банка</a>
         </Typography>
       )
@@ -111,7 +111,7 @@ const ControlledExpansionPanels = () => {
       answer: (
         <Typography>
           Оплачивайте картой как можно больше покупок. <br/>
-Если каждый месяц в Starbanking Вы выбираете любимые категории покупок с повышенным кешбэком в разделе “Кешбэк”, Вы получаете до 10% кешбэка в выбранных категориях.<br/>
+Если каждый месяц в BCC.KZ Вы выбираете любимые категории покупок с повышенным кешбэком в разделе “Кешбэк”, Вы получаете до 10% кешбэка в выбранных категориях.<br/>
 За други е личные покупки 1% кешбэка, а при наличии вклада Рахмет или Рахмет+ 
 от 1 млн. тенге 2% кешбэка. В сети партнеров кешбэк может достигать 30%
         </Typography>
