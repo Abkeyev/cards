@@ -317,42 +317,15 @@ const Cards = (props: any) => {
         <Grid item xl={12} lg={12} md={12}>
             <Grid container direction="row" justify="space-between" className={classes.card} style={{marginBottom: 24}}>
                 <Grid item xl={4} lg={4} md={4} sm={4} xs={12}>
-                    <img src="salarycard.svg" alt=""/>
+                    <img src="socialCard.svg" alt=""/>
                 </Grid>
                 <Grid item xl={8} lg={8} md={8} sm={8} xs={12}>
-                    <h1>Зарплатная #UCard<span className="chip">дебетовая карта</span></h1>
-                    <h2>Идеальная карта, как для людей, так и бизнеса</h2>
+                    <h1>#Фиолетовая карта<span className="chip">зарплатная/стандартная</span><span className="chip">социальная</span><span className="chip">пенсионная</span></h1>
+                    <h2> Карта для получения заработной платы, пособий и соц.выплат, пенсий</h2>
                     <Grid container direction="row" justify="space-between">
                         <Grid item>
                             <h3>Чат, звонки, почта</h3>
                             <h4>Круглосуточная поддержка</h4>
-                        </Grid>
-                        <Grid item>
-                            <h3>1%</h3>
-                            <h4>Кешбэк на все операции</h4>
-                        </Grid>
-                        <Grid item>
-                            <h3>Переводы, SMS-сервис и пр.</h3>
-                            <h4>Бесплатные условия</h4>
-                        </Grid>
-                    </Grid>
-                    <a href="https://www.bcc.kz/product/salary-project/?utm_source=bcc&utm_medium=button_click&utm_campaign=cards" id="salaryOrder" className={classes.button} target="_blank">Заказать карту</a>
-                    <a href="https://www.bcc.kz/product/salary-project/?utm_source=bcc&utm_medium=button_click&utm_campaign=cards" id="salaryDetail" className={`${classes.button} ${classes.buttonSecond} ${classes.btnGreen}`} target="_blank">Подробнее о карте</a>
-                </Grid>
-            </Grid>
-        </Grid>
-        <Grid item xl={12} lg={12} md={12}>
-            <Grid container direction="row" justify="space-between" className={classes.card} style={{marginBottom: 24}}>
-                <Grid item xl={4} lg={4} md={4} sm={4} xs={12}>
-                    <img src="socialCard.svg" alt=""/>
-                </Grid>
-                <Grid item xl={8} lg={8} md={8} sm={8} xs={12}>
-                    <h1>#Социальная карта<span className="chip">дебетовая карта</span></h1>
-                    <h2> Карта для пособий и социальных выплат</h2>
-                    <Grid container direction="row" justify="space-between">
-                        <Grid item>
-                            <h3>Бесконтактная оплата</h3>
-                            <h4>payWave</h4>
                         </Grid>
                         <Grid item>
                             <h3>Выпуск, обслуживание</h3>
